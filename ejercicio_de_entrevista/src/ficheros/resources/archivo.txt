@@ -1,0 +1,4 @@
+Esto es un archivo de texto
+El programa debe leer solo 
+la primera linea de texto de 
+este archivo
