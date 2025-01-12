@@ -12,6 +12,7 @@ public class MatriculaService {
 	public MatriculaService() {
 		this.usuariosRegistrados = new ArrayList<Usuario>();
 		this.campusDisponible = new HashMap<String, Campus>();
+		crearCampus();
 	}
 
 	private void crearCampus() {
@@ -28,11 +29,13 @@ public class MatriculaService {
 		campusDisponible.put("Liverpool", liverpool);
 	}
 
-	public void registrarUsuario(Usuario usuario) {
+	public boolean registrarUsuario(Usuario usuario) {
 		Campus campus = campusDisponible.get(usuario.getCampusElegido());
 		if (campus != null && campus.getPlazasDisponibles(usuario.getProgramaElegido()) > 0) {
 			campus.ocuparPlaza(usuario.getProgramaElegido());
 			usuariosRegistrados.add(usuario);
+			return true;
 		}
+		return false;
 	}
 }
