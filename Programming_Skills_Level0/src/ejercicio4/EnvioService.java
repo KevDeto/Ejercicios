@@ -9,7 +9,7 @@ public class EnvioService {
 	private final List<Paquete> paquetes = new ArrayList<>();
 	private final Random random = new Random();
 
-	public void processShipment(Scanner scanner) {
+	public void realizarEnvio(Scanner scanner) {
 		System.out.print("Ingrese el nombre del remitente: ");
 		String remitente = scanner.nextLine();
 
@@ -28,7 +28,7 @@ public class EnvioService {
 		System.out.printf("El paquete con numero %s ha sido registrado.\n", paqueteID);
 		System.out.printf("El costo total del envío es: $%.2f\n", precio);
 
-		System.out.print("¿Desea realizar otra operacion? (sí/no): ");
+		System.out.print("¿Desea realizar otra operacion? (si/no): ");
 		String respuesta = scanner.nextLine();
 
 		if (!respuesta.equalsIgnoreCase("si")) {
@@ -42,6 +42,6 @@ public class EnvioService {
 	}
 
 	private String generatePackageId() {
-		return "PKG-" + random.nextInt(10000);
+		return "PQT-" + random.nextInt(10000);
 	}
 }

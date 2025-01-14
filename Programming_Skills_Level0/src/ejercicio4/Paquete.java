@@ -6,11 +6,11 @@ public class Paquete {
 	private final String destinatario;
 	private final double peso;
 
-	public Paquete(String paqueteID, String sender, String recipient, double weight) {
+	public Paquete(String paqueteID, String remitente, String destinatario, double peso) {
 		this.paqueteID = paqueteID;
-		this.remitente = sender;
-		this.destinatario = recipient;
-		this.peso = weight;
+		this.remitente = remitente;
+		this.destinatario = destinatario;
+		this.peso = peso;
 	}
 
 	@Override
